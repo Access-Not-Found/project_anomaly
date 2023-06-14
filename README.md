@@ -23,14 +23,15 @@ There are going to be some anomalies that we can identify to help the requestor 
   
 * Prepare
     * dropped columns
-        * slack, deleted_at, id
+        * Unnamed: 0, id, slack, deleted_at, date, time
     * renamed columns
         * name to cohort
-        * date to access_date
+        * created_at to created
+        * updated_at to updated
     * changed dates to datetime type
     * created new columns
         * program name
-        * access_date and time combined into one column
+        * date and time combined into one column and renamed to access_dates
     * cohort_id had 1,334 nulls
         * Bash, Darden, Florence, Hyperion, and Jupiter all had no cohort_id's assigned
             * mapped cohort_id's here that were not taken
