@@ -72,7 +72,6 @@ def prep_logs(df):
     df = df.rename(columns={'name': 'cohort', 'created_at': 'created', 'updated_at': 'updated'})
     
     # changed datatypes
-    df['cohort_id'] = df['cohort_id'].astype(int)
     df['start_date'] = df['start_date'].astype('datetime64')
     df['end_date'] = df['end_date'].astype('datetime64')
     df['created'] = df['created'].astype('datetime64')
@@ -83,6 +82,7 @@ def prep_logs(df):
     df['program'] = df['program_id'].map({1: 'data science', 2: 'web dev', 3: 'web dev', 4: 'web dev'})
     cohort_id_mapping = {'Bash': 2, 'Darden': 3, 'Florence': 4, 'Hyperion': 5, 'Jupiter': 6}
     df['cohort_id'].fillna(df['cohort'].map(cohort_id_mapping), inplace=True)
+    df['cohort_id'] = df['cohort_id'].astype(int)
     
     # grabs the lesson from path
     df['lesson'] = df['path'].str.split('/').str[-2]
