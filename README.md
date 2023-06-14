@@ -23,7 +23,7 @@ There are going to be some anomalies that we can identify to help the requestor 
   
 * Prepare
     * dropped columns
-        * Unnamed: 0, id, slack, deleted_at, date, time
+        * id, slack, deleted_at, date, time
     * renamed columns
         * name to cohort
         * created_at to created
