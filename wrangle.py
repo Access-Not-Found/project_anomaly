@@ -1,6 +1,5 @@
 #IMPORTS
 import pandas as pd
-import cely_env
 import env
 from sqlalchemy import text, create_engine
 
