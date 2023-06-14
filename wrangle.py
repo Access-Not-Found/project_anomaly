@@ -26,7 +26,7 @@ def get_logs(directory, filename):
     """
 
     if os.path.exists(directory + filename):
-        df = pd.read_csv(directory + filename)
+        df = pd.read_csv(directory + filename,index_col=0)
         return df
     else:
         url = env.get_db_url('curriculum_logs')
@@ -34,7 +34,7 @@ def get_logs(directory, filename):
         query = text("""SELECT * FROM curriculum_logs.cohorts as c
                         JOIN curriculum_logs.logs as l ON c.id=l.user_id;""")
         df = pd.read_sql(query, conn)
-        df.to_csv(directory + filename)
+        df.to_csv(directory + filename,index_col=0)
         return df
 
 def get_connection(db):
@@ -66,7 +66,7 @@ def prep_logs(df):
     mapping program IDs to program names, and filling null cohort IDs based on cohort names.
     """
     df['access_date'] = df.apply(lambda row: str(row['date']) + ' ' + str(row['time']), axis=1)
-    df = df.drop(columns={'Unnamed: 0', 'id', 'slack', 'deleted_at', 'date', 'time'})
+    df = df.drop(columns={ 'id', 'slack', 'deleted_at', 'date', 'time'})
     df = df.rename(columns={'name': 'cohort', 'created_at': 'created', 'updated_at': 'updated'})
     df['start_date'] = df['start_date'].astype('datetime64')
     df['end_date'] = df['end_date'].astype('datetime64')
