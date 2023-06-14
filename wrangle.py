@@ -31,8 +31,8 @@ def get_logs(directory, filename):
     else:
         url = env.get_db_url('curriculum_logs')
         conn = create_engine(url).connect()
-        query = text("""SELECT * FROM curriculum_logs.cohorts as c
-                        JOIN curriculum_logs.logs as l ON c.id=l.user_id;""")
+        query = text("""SELECT * FROM curriculum_logs.logs as l
+                        JOIN curriculum_logs.cohorts as c ON c.id=l.cohort_id;""")
         df = pd.read_sql(query, conn)
         df.to_csv(directory + filename,index_col=0)
         return df
