@@ -80,8 +80,6 @@ def prep_logs(df):
     
     # mapped null cohort_ids with selected numbers (no ranking)
     df['program'] = df['program_id'].map({1: 'web dev', 2: 'web dev', 3: 'data science', 4: 'frontend'})
-    cohort_id_mapping = {'Bash': 2, 'Darden': 3, 'Florence': 4, 'Hyperion': 5, 'Jupiter': 6}
-    df['cohort_id'].fillna(df['cohort'].map(cohort_id_mapping), inplace=True)
     df['cohort_id'] = df['cohort_id'].astype(int)
     
     # grabs the lesson from path
