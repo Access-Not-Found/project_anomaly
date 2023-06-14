@@ -49,6 +49,7 @@ There are going to be some anomalies that we can identify to help the requestor 
         2. Is there a cohort that referred to a lesson significantly more than other cohorts seemed to gloss over?
         3. At some point in 2019, the ability for students and alumni to access both curriculums (web dev to ds, ds to web dev) should have been shut off. Do you see any evidence of that happening? Did it happen before?
             * There is evidence of students accessing different materials during 2018-2020. It was difficult to determine, by program_id, which students belonged to which known Codeup program. Knowing that data science began in 2019 helped to determine the proper program names. From that knowledge we were able to correctly identify the programs based on dates and lessons pinged.
+            * I found that data science students stopped logging access June 28, 2018, so it is not possible to see what they have been accessing since then using this dataset.
         4. What topics are grads continuing to reference after graduation and into their jobs (for each program)?
         5. Which lessons are least accessed?
         6. Anything else of note...
