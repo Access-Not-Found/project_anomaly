@@ -12,7 +12,7 @@ print(f'Imports Successful')
 
 # FUNCTIONS
 
-#acquire data
+# -------------------------------------------------------------------- ACQUIRE --------------------------------------------------------------------
 def get_logs(directory, filename):
     """
     Retrieves logs data from the specified database table and saves it as a CSV file.
@@ -39,11 +39,15 @@ def get_logs(directory, filename):
         return df
 
 def get_connection(db):
+    """This function creates the url used to check if file exists in the local directory
+    ---
+    Format: url = function()
+    """
     return f'mysql+pymysql://{env.user}:{env.password}@{env.host}/{db}'
 
 def check_file_exists(fn, query, url):
     """
-    check if file exists in my local directory, if not, pull from sql db
+    check if file exists in my local directory, if not, pull from sql db, save as csv and
     return dataframe
     """
     if os.path.isfile(fn):
@@ -53,4 +57,8 @@ def check_file_exists(fn, query, url):
         print('creating df and exporting csv')
         df = pd.read_sql(query, url)
         df.to_csv(fn)
-        return df    
+        return df
+    
+# -------------------------------------------------------------------- PREPARE --------------------------------------------------------------------
+
+
