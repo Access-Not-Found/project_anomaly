@@ -30,7 +30,10 @@ There are going to be some anomalies that we can identify to help the requestor 
         * updated_at to updated
     * changed dates to datetime type
     * created new columns
-        * program name
+        * program name by mapping program_id
+            * 1 = data science
+            * 2&3 = web dev
+            * 4 = cloud
         * date and time combined into one column and renamed to access_dates
     * cohort_id had 1,334 nulls
         * Bash, Darden, Florence, Hyperion, and Jupiter all had no cohort_id's assigned
@@ -41,6 +44,8 @@ There are going to be some anomalies that we can identify to help the requestor 
 * Explore
     * Questions
         1. Which lesson appears to attract the most traffic consistently across cohorts (per program)?
+            * fundamentals for data science
+            * mysql for web dev
         2. Is there a cohort that referred to a lesson significantly more than other cohorts seemed to gloss over?
         3. Are there students who, when active, hardly access the curriculum? If so, what information do you have about these students?
         4. What topics are grads continuing to reference after graduation and into their jobs (for each program)?
