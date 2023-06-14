@@ -79,7 +79,7 @@ def prep_logs(df):
     df['access_date'] = df['access_date'].astype('datetime64')
     
     # mapped null cohort_ids with selected numbers (no ranking)
-    df['program'] = df['program_id'].map({1: 'data science', 2: 'web dev', 3: 'web dev', 4: 'cloud'})
+    df['program'] = df['program_id'].map({1: 'web dev', 2: 'web dev', 3: 'data science', 4: 'frontend'})
     cohort_id_mapping = {'Bash': 2, 'Darden': 3, 'Florence': 4, 'Hyperion': 5, 'Jupiter': 6}
     df['cohort_id'].fillna(df['cohort'].map(cohort_id_mapping), inplace=True)
     df['cohort_id'] = df['cohort_id'].astype(int)
