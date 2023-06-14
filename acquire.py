@@ -7,10 +7,9 @@ import os
 import pandas as pd
 from sqlalchemy import create_engine, text
 
+print(f'Imports Successful')
 
 # FUNCTIONS
-
-
 
 #acquire data
 def get_logs(directory, filename):
@@ -37,3 +36,20 @@ def get_logs(directory, filename):
         df = pd.read_sql(query, conn)
         df.to_csv(directory + filename)
         return df
+
+def get_connection(db):
+    return f'mysql+pymysql://{env.user}:{env.password}@{env.host}/{db}'
+
+def check_file_exists(fn, query, url):
+    """
+    check if file exists in my local directory, if not, pull from sql db
+    return dataframe
+    """
+    if os.path.isfile(fn):
+        print('csv file found and loaded')
+        return pd.read_csv(fn, index_col=0)
+    else: 
+        print('creating df and exporting csv')
+        df = pd.read_sql(query, url)
+        df.to_csv(fn)
+        return df    
