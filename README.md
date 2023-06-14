@@ -17,11 +17,26 @@ There are going to be some anomalies that we can identify to help the requestor 
 * Acquire
     * Data acquired from MySql Server using env.py credentials
     * Joined logs and cohorts tables then pulled into jupyter lab environment and created a CSV
+    * 73739 Rows x 15 Columns *before* cleaning
+    * 73739 Rows x 12 Columns *after* cleaning
+
   
 * Prepare
-    * 
-    * 
-     
+    * dropped columns
+        * slack, deleted_at, id
+    * renamed columns
+        * name to cohort
+        * date to access_date
+    * changed dates to datetime type
+    * created new columns
+        * program name
+        * access_date and time combined into one column
+    * cohort_id had 1,334 nulls
+        * Bash, Darden, Florence, Hyperion, and Jupiter all had no cohort_id's assigned
+            * mapped cohort_id's here that were not taken
+            * there did not seem to be any logical ranking order to the cohort_id's
+            * 2-6, inclusive, respective to name listing
+
 * Explore
     * Questions
         1. Which lesson appears to attract the most traffic consistently across cohorts (per program)?
