@@ -6,7 +6,9 @@ This repo contains a group project identifying anomalies in user access logs for
 
 # Project Goal
 
-* Answer 5 questions sent through e-mail.
+* Outliers on the curriculum logs, providing insights via email to the boss for the board meeting on Friday morning.
+* This analysis aims to address the listed questions and uncover any additional important findings related to the observed counts data.
+* Answer 5 questions sent through e-mail, provide one slide summary in Google slides.
 
 # Initial Thoughts
 
@@ -72,25 +74,25 @@ There are going to be valuable insights that we can use to help the requestor wi
 
 # Explore Takeaways
 
- 1. Which lesson appears to attract the most traffic consistently across cohorts (per program)?
-        * 1-fundamentals for data science
-        * javascript-i for web dev
-        * images for frontend
+1. Which lesson appears to attract the most traffic consistently across cohorts (per program)?
+    * Classification, javascript-i, and html-css are the top lessons per program offered.
 2. Is there a cohort that referred to a lesson significantly more than other cohorts seemed to gloss over?
-        * Cohorts Bayes and Curie, specialized in data science, exhibit higher access frequencies for lessons on anomaly detection, NLP, 3-SQL, and Python. Cohort Teddy shows a distinct preference for the mkdocs lesson, while Cohort Zion demonstrates a significantly higher frequency for accessing CSS-I.
-        * The Apex cohort stands out by accessing the professional development lesson more frequently than other cohorts. Additionally, all cohorts show similar frequencies in accessing the extra features and CSS lessons.
+    * Cohorts Bayes and Curie, specialized in data science, exhibit higher access frequencies for lessons on anomaly detection, NLP, 3-SQL, and Python. Cohort Teddy shows a distinct preference for the mkdocs lesson, while Cohort Zion demonstrates a significantly higher frequency for accessing CSS-I.
+    * The Apex cohort stands out by accessing the professional development lesson more frequently than other cohorts. Additionally, all cohorts show similar frequencies in accessing the extra features and CSS lessons.
 3. At some point in 2019, the ability for students and alumni to access both curriculums (web dev to ds, ds to web dev) should have been shut off. Do you see any evidence of that happening? Did it happen before?
-        * There is evidence of students accessing different materials during 2018. It was difficult to determine, by program_id, which students belonged to which known Codeup program. Knowing that data science began in 2019 helped to determine the proper program names. From that knowledge we were able to correctly identify the programs based on dates and lessons pinged.
-        * There are web dev students accessing data science materials into 2020, *after* access was restricted.
+    * There is evidence of students accessing different materials during 2018. It was difficult to determine, by program_id, which students belonged to which known Codeup program. Knowing that data science began in 2019 helped to determine the proper program names. From that knowledge we were able to correctly identify the programs based on dates and lessons pinged.
+    * There are web dev students accessing data science materials into 2020, *after* access was restricted.
 4. What topics are grads continuing to reference after graduation and into their jobs (for each program)?
-        * The top lessons accessed after graduation in the Web Development program include fundamentals, MySQL, and JavaScript I, II, and III. In the Data Science program, frequently accessed post-graduation lessons are SQL, classification, fundamental, Python, and 3-SQL.
+    * The top lessons accessed after graduation in the Web Development program include fundamentals, MySQL, and JavaScript I, II, and III. In the Data Science program, frequently accessed post-graduation lessons are SQL, classification, fundamental, Python, and 3-SQL.
 5. Which lessons are least accessed?
-        * Lessons like using-files, intro-to-mysql, control-structures-ii, command-line, and PHP have relatively low student access rates. This suggests that these lessons cover familiar everyday practices and may not require frequent review, unlike more complex and less commonly used lessons.
+    * Lessons like using-files, intro-to-mysql, control-structures-ii, command-line, and PHP have relatively low student access rates. This suggests that these lessons cover familiar everyday practices and may not require frequent review, unlike more complex and less commonly used lessons.
 6. Anything else of note...
-        * not on this iteration
+    * not on this iteration
         
 # Recommendations/Next Steps
 
 * The cohorts that pinged the most may have had some circumstances with the curriculum not work in their favor. I recommend working with the instructors to identify and remedy the possible confusion.
 
 * For the third question my next steps would be to identify the students specifically that are accessing restricted materials to try to figure out how they did it and close the loop.
+
+* We recommend maintaining graduates' access to the curriculum and implementing a system to send them notifications regarding significant updates. This approach ensures their ongoing engagement and keeps them up-to-date with the latest advancements in the curriculum.
