@@ -1,4 +1,5 @@
 #IMPORTS
+
 import pandas as pd
 import env
 from sqlalchemy import text, create_engine
@@ -12,21 +13,14 @@ print(f'Imports Successful')
 # FUNCTIONS
 
 # -------------------------------------------------------------------- ACQUIRE --------------------------------------------------------------------
-def get_logs(directory, filename):
+def get_logs(filename):
     """
     Retrieves logs data from the specified database table and saves it as a CSV file.
-
-    Args:
-        directory (str): The directory path where the CSV file will be saved.
-        filename (str): The name of the CSV file.
-
-    Returns:
-        pandas.DataFrame: The logs data as a pandas DataFrame.
-
-    """
+"""
+    directory = os.getcwd() + "/"  # Use the current working directory as the directory path
 
     if os.path.exists(directory + filename):
-        df = pd.read_csv(directory + filename,index_col=0)
+        df = pd.read_csv(directory + filename, index_col=0)
         return df
     else:
         url = env.get_db_url('curriculum_logs')
@@ -34,10 +28,12 @@ def get_logs(directory, filename):
         query = text("""SELECT * FROM curriculum_logs.logs as l
                         JOIN curriculum_logs.cohorts as c ON c.id=l.cohort_id;""")
         df = pd.read_sql(query, conn)
-        df.to_csv(directory + filename,index_col=0)
+        df.to_csv(directory + filename, index_col=0)
         return df
 
+
 def get_connection(db):
+
     """This function creates the url used to check if file exists in the local directory
     ---
     Format: url = function()
