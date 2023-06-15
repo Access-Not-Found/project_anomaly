@@ -1,11 +1,17 @@
 # IMPORTS
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+import pandas as pd
+import os
+import itertools
+import wrangle as w
 
+# DBSCAN import
+from sklearn.cluster import DBSCAN
 
-
-
-
-
-
+# Scaler import
+from sklearn.preprocessing import MinMaxScaler
 
 #FUNCTIONS
 
