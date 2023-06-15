@@ -70,9 +70,7 @@ There are going to be valuable insights that we can use to help the requestor wi
 
 ---
 
-# Takeaways
-
-Explore takeaways 
+# Explore Takeaways
 
  1. Which lesson appears to attract the most traffic consistently across cohorts (per program)?
         * 1-fundamentals for data science
@@ -89,3 +87,9 @@ Explore takeaways
         * 
 6. Anything else of note...
         * not on this iteration
+        
+# Recommendations/Next Steps
+
+* The cohorts that pinged the most may have had some circumstances with the curriculum not work in their favor. I recommend working with the instructors to identify and remedy the possible confusion.
+
+* For the third question my next steps would be to identify the students specifically that are accessing restricted materials to try to figure out how they did it and close the loop.
