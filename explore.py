@@ -19,7 +19,7 @@ def detect_outliers(observed_counts):
         outliers (pandas.DataFrame): DataFrame containing outliers identified by DBSCAN.
         non_outliers (pandas.DataFrame): DataFrame containing non-outliers identified by DBSCAN.
     """
-   
+    observed_counts=observed_counts.iloc[1:].sort_values(by='lesson',ascending=False)
     
 
     scaler = MinMaxScaler()
