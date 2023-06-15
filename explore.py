@@ -29,12 +29,12 @@ def detect_outliers(observed_counts):
     
 
     scaler = MinMaxScaler()
-    normalized_counts = scaler.fit_transform(observed_counts_sorted)
+    normalized_counts = scaler.fit_transform(observed_counts)
 
     dbscan = DBSCAN(eps=0.5, min_samples=5)
     outlier_labels = dbscan.fit_predict(normalized_counts)
 
-    outliers = observed_counts_sorted[outlier_labels == -1]
-    non_outliers = observed_counts_sorted[outlier_labels == 0]
+    outliers = observed_counts[outlier_labels == -1]
+    non_outliers = observed_counts[outlier_labels == 0]
 
     return outliers, non_outliers
